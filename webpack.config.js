@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const data = require('./data.json');
 
 module.exports = (env, argv) => ({
     entry: ['babel-polyfill', './src/index.tsx'],
@@ -40,9 +41,17 @@ module.exports = (env, argv) => ({
         port: 3000,
         publicPath: 'http://localhost:3000/',
         hotOnly: true,
+        before(app) {
+            app.get('/data', (req, res) => {
+                res.json(data);
+            });
+        },
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({ filename: 'bundle.css' }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development'),
+        }),
     ],
 });

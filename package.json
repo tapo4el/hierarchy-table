@@ -9,18 +9,21 @@
     "start": "webpack-dev-server --mode development",
     "start:dev": "webpack-dev-server -d --content-base ./public",
     "build": "webpack --mode production",
-    "lint": "eslint ./src/**/*"
+    "lint": "eslint src/**/*.tsx src/**/*.ts"
   },
   "dependencies": {
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.8",
     "@types/redux-actions": "^2.6.0",
+    "@types/remote-redux-devtools": "^0.5.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.4",
     "react-redux": "^7.0.2",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "reset-css": "^4.0.1",
     "whatwg-fetch": "^3.0.0"
@@ -51,6 +54,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
+    "remote-redux-devtools": "^0.5.16",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "typescript": "^3.4.5",
