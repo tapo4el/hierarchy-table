@@ -1,0 +1,42 @@
+body {
+    margin: 10px;
+}
+.dataTable {
+    width: 100%;
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    border-collapse: separate;
+}
+
+.dataTable thead {
+}
+.dataTable thead th {
+    background: rgb(220, 220, 220);
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+}
+.dataTable tbody td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+    border-right: 1px solid rgba(34, 36, 38, 0.15);
+}
+.dataTable tbody td.tableWrapper {
+    padding: 20px 10px;
+    background-color: #fff;
+}
+
+.dataTable tbody tr:nth-child(2n) {
+    background-color: rgba(0,0,50,.02);
+}
+.dataTable tbody tr:hover {
+    background-color: #fcfff5;
+}
+.tableWrapper>div {
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-bottom: none;
+    padding: 8px 0 8px 10px;
+    font-weight: bold;
+}

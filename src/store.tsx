@@ -9,7 +9,7 @@ import { composeWithDevTools } from 'remote-redux-devtools';
 
 import reducers from './reducers';
 import api from './utils/api';
-import { dataReceived } from './actions';
+import dataReceived from './actions';
 import { DataResponse, AppState } from './types';
 
 const loadData = async (): Promise<DataResponse> => {

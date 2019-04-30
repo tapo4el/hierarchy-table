@@ -1,10 +1,15 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import 'reset-css';
+
+import Table from './components/Table';
 
 class App extends React.PureComponent {
-    public render(): React.ReactNode {
+    render(): React.ReactNode {
         return (
-            <div className="app">Hello! Me</div>
+            <div className="app">
+                <Table tableName="users" />
+            </div>
         );
     }
 }
