@@ -1,5 +1,7 @@
 import { createAction } from 'redux-actions';
 
-const dataReceived = createAction('DATA_RECEIVED');
+import { UserResponse } from '../types';
+
+const dataReceived = createAction<UserResponse[]>('DATA_RECEIVED');
 
 export default dataReceived;

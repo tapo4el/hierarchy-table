@@ -1,7 +1,7 @@
 import {
     TableData,
-    RelativesResponse,
-    DataResponse,
+    RelativeResponse,
+    UserResponse,
     PhoneResponse,
 } from '../types';
 
@@ -11,8 +11,8 @@ function normalizePhone(acc: TableData, records: PhoneResponse[]): void {
     });
 }
 
-function normalizeRelatives(acc: TableData, records: RelativesResponse[]): void {
-    records.forEach((item: RelativesResponse): void => {
+function normalizeRelatives(acc: TableData, records: RelativeResponse[]): void {
+    records.forEach((item: RelativeResponse): void => {
         acc.relatives[item.data['Patient ID']].push(item.data);
         if (Object.prototype.hasOwnProperty.call(item.kids, 'has_phone')) {
             acc.phones[item.data['Relative ID']] = [];
@@ -21,8 +21,8 @@ function normalizeRelatives(acc: TableData, records: RelativesResponse[]): void 
     });
 }
 
-export default function normalizeData(data: DataResponse[]): TableData {
-    return data.reduce((acc: TableData, item: DataResponse): TableData => {
+export default function normalizeData(data: UserResponse[]): TableData {
+    return data.reduce((acc: TableData, item: UserResponse): TableData => {
         acc.users.push(item.data);
         if (Object.prototype.hasOwnProperty.call(item.kids, 'has_relatives')) {
             acc.relatives[item.data['Identification number']] = [];

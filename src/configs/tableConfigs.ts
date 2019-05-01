@@ -4,6 +4,10 @@ const tableConfigs: TableConfigs = {
     users: {
         columns: [
             {
+                title: '',
+                key: 0,
+            },
+            {
                 title: 'Identification number',
                 key: 1,
             },
@@ -50,6 +54,10 @@ const tableConfigs: TableConfigs = {
     relatives: {
         columns: [
             {
+                title: '',
+                key: 0,
+            },
+            {
                 title: 'Relative ID',
                 key: 1,
             },
@@ -84,6 +92,7 @@ const tableConfigs: TableConfigs = {
                 key: 3,
             },
         ],
+        idField: 'Phone ID',
     },
 };
 

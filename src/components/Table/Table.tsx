@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import './styles.css';
 
@@ -15,7 +15,7 @@ class Table extends React.PureComponent<TableProps, TableState> {
     onClickHandler(id: string): void {
         const { showChildrenFor } = this.state;
         if (showChildrenFor.includes(id)) {
-            this.setState({ showChildrenFor: showChildrenFor.filter(el => el !== id) });
+            this.setState({ showChildrenFor: showChildrenFor.filter(Id => Id !== id) });
         } else {
             this.setState({ showChildrenFor: showChildrenFor.concat(id) });
         }
@@ -26,13 +26,22 @@ class Table extends React.PureComponent<TableProps, TableState> {
         const { showChildrenFor } = this.state;
         const { idField, childTableName, columns } = tableConfigs[tableName];
         const id = elem[idField];
+        const hasChildTable = childList.includes(id);
+        const isChildTableVisible = showChildrenFor.includes(id) && hasChildTable;
+        const row = childTableName
+            ? [
+                <td className="arrow" key="arrow">
+                    { hasChildTable && <div className={isChildTableVisible ? 'arrow-down' : 'arrow-right'} /> }
+                </td>,
+            ]
+            : [];
 
         return (
             <React.Fragment key={id}>
                 <tr onClick={() => this.onClickHandler(id)}>
-                    { Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>) }
+                    { row.concat(Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>)) }
                 </tr>
-                { showChildrenFor.includes(id) && childList.includes(id) && (
+                { isChildTableVisible && (
                     <tr>
                         <td colSpan={columns.length} className="tableWrapper">
                             <div className="tableTitle">{`has_${childTableName}`}</div>

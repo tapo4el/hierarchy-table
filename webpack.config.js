@@ -51,7 +51,7 @@ module.exports = (env, argv) => ({
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({ filename: 'bundle.css' }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development'),
+            'process.env.NODE_ENV': JSON.stringify('production'),
         }),
     ],
 });

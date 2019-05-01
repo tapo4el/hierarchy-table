@@ -1,4 +1,6 @@
-import { Record } from '../../types';
+import { OutputParametricSelector } from 'reselect';
+
+import { AppState, Record } from '../../types';
 
 export interface OwnProps {
     tableName: string;
@@ -12,3 +14,5 @@ export interface TableProps {
 export interface TableState {
     showChildrenFor: string[];
 }
+
+export type selectorType = OutputParametricSelector<AppState, string, Record[], (res: [AppState, string]) => Record[]>

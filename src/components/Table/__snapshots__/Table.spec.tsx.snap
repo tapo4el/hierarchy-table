@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table "phones" should be rendered correctly 1`] = `
+<table
+  className="dataTable"
+>
+  <thead>
+    <tr>
+      <th>
+        Phone ID
+      </th>
+      <th>
+        ID of the relative
+      </th>
+      <th>
+        Phone
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      onClick={[Function]}
+    >
+      <td>
+        2008
+      </td>
+      <td>
+        1007
+      </td>
+      <td>
+        +(179)-982-0570
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table "relatives" should be rendered correctly 1`] = `
+<table
+  className="dataTable"
+>
+  <thead>
+    <tr>
+      <th>
+        
+      </th>
+      <th>
+        Relative ID
+      </th>
+      <th>
+        Patient ID
+      </th>
+      <th>
+        Is alive?
+      </th>
+      <th>
+        Frequency of visits
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      onClick={[Function]}
+    >
+      <td
+        className="arrow"
+      >
+        <div
+          className="arrow-right"
+        />
+      </td>
+      <td>
+        1007
+      </td>
+      <td>
+        34
+      </td>
+      <td>
+        true
+      </td>
+      <td>
+        29
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table "users" should be rendered correctly if it doesn\`t have child table 1`] = `
+<table
+  className="dataTable"
+>
+  <thead>
+    <tr>
+      <th>
+        
+      </th>
+      <th>
+        Identification number
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Gender
+      </th>
+      <th>
+        Risk
+      </th>
+      <th>
+        Hair length
+      </th>
+      <th>
+        IQ
+      </th>
+      <th>
+        Admission date
+      </th>
+      <th>
+        Last breakdown
+      </th>
+      <th>
+        Yearly fee
+      </th>
+      <th>
+        Knows the Joker?
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      onClick={[Function]}
+    >
+      <td
+        className="arrow"
+      />
+      <td>
+        34
+      </td>
+      <td>
+        Jason
+      </td>
+      <td>
+        m
+      </td>
+      <td>
+        BITES
+      </td>
+      <td>
+        1.6000000000
+      </td>
+      <td>
+        91
+      </td>
+      <td>
+        Mon Feb 17 00:00:00 CET 1997
+      </td>
+      <td>
+        Wed Dec 03 03:09:55 CET 2014
+      </td>
+      <td>
+        67932
+      </td>
+      <td>
+        false
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table "users" should be rendered correctly if it has child table 1`] = `
+<table
+  className="dataTable"
+>
+  <thead>
+    <tr>
+      <th>
+        
+      </th>
+      <th>
+        Identification number
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Gender
+      </th>
+      <th>
+        Risk
+      </th>
+      <th>
+        Hair length
+      </th>
+      <th>
+        IQ
+      </th>
+      <th>
+        Admission date
+      </th>
+      <th>
+        Last breakdown
+      </th>
+      <th>
+        Yearly fee
+      </th>
+      <th>
+        Knows the Joker?
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      onClick={[Function]}
+    >
+      <td
+        className="arrow"
+      >
+        <div
+          className="arrow-right"
+        />
+      </td>
+      <td>
+        34
+      </td>
+      <td>
+        Jason
+      </td>
+      <td>
+        m
+      </td>
+      <td>
+        BITES
+      </td>
+      <td>
+        1.6000000000
+      </td>
+      <td>
+        91
+      </td>
+      <td>
+        Mon Feb 17 00:00:00 CET 1997
+      </td>
+      <td>
+        Wed Dec 03 03:09:55 CET 2014
+      </td>
+      <td>
+        67932
+      </td>
+      <td>
+        false
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

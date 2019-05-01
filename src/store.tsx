@@ -5,21 +5,14 @@ import {
     Store,
 } from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'remote-redux-devtools';
 
 import reducers from './reducers';
-import api from './utils/api';
 import dataReceived from './actions';
-import { DataResponse, AppState } from './types';
+import { UserResponse, AppState } from './types';
+import { UserAPI } from './utils/api';
 
-const loadData = async (): Promise<DataResponse> => {
-    const response = await api.getData();
-    return response.json();
-};
-
-export default function configureStore(): Store<AppState> {
-    const composeEnhancers = composeWithDevTools({ realtime: true });
-    const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
-    loadData().then((data: DataResponse): Action => store.dispatch(dataReceived(data)));
+export default function configureStore(getUsers: UserAPI): Store<AppState> {
+    const store = createStore(reducers, applyMiddleware(thunk));
+    getUsers().then((data: UserResponse[]): Action => store.dispatch(dataReceived(data)));
     return store;
 }

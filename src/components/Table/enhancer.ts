@@ -7,10 +7,10 @@ import {
     getRelatives,
     getChildren,
 } from '../../selectors';
-import { OwnProps, TableProps } from './types';
+import { OwnProps, TableProps, selectorType } from './types';
 import tableConfigs from '../../configs/tableConfigs';
 
-const selectorsMap: any = {
+const selectorsMap: {[key: string]: selectorType} = {
     users: getUsers,
     relatives: getRelatives,
     phones: getPhones,

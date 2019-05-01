@@ -5,7 +5,7 @@ export interface TableConfigs {
 }
 export interface TableConfig {
     columns: CellConfig[];
-    idField?: string;
+    idField: string;
     childTableName?: childTable;
 }
 export interface CellConfig {

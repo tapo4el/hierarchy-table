@@ -25,11 +25,11 @@ export interface Record {
 //     'Yearly fee': string;
 //     'Knows the Joker?': string;
 // }
-export interface DataResponse {
+export interface UserResponse {
     data: Record;
     kids: {
         has_relatives?: {
-            records: RelativesResponse[];
+            records: RelativeResponse[];
         };
     };
 }
@@ -39,7 +39,7 @@ export interface DataResponse {
 //     'Is alive?': string;
 //     'Frequency of visits': string;
 // }
-export interface RelativesResponse {
+export interface RelativeResponse {
     data: Record;
     kids: {
         has_phone?: {
