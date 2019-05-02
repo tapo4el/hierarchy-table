@@ -6,11 +6,11 @@
   "author": "Ilyas Zainullin",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --config ./configs/webpack.config.js",
+    "build": "webpack --mode production --config ./configs/webpack.config.js",
     "lint": "eslint src/**/*.tsx src/**/*.ts",
-    "test": "jest",
-    "testWithCoverage": "jest --coverage"
+    "test": "jest --config ./configs/jest.config.js",
+    "testWithCoverage": "jest --coverage --config ./configs/jest.config.js"
   },
   "dependencies": {
     "@types/enzyme": "^3.9.1",

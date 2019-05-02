@@ -4,11 +4,17 @@ module.exports = {
         '\\.(css|less)$': 'identity-obj-proxy',
     },
     setupFiles: [
-        '<rootDir>/enzyme.config.js',
+        '<rootDir>/configs/enzyme.config.js',
         '<rootDir>/node_modules/regenerator-runtime/runtime',
     ],
     transform: { '\\.(ts|tsx)?$': 'ts-jest' },
     testEnvironment: 'jsdom',
     testRegex: '/src/.*\\.(test|spec)?\\.(ts|tsx)$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    rootDir: '../',
+    globals: {
+        'ts-jest': {
+            tsConfig: './configs/tsconfig.json',
+        },
+    },
 };

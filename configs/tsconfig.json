@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": "../src",
     "target": "es6",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
@@ -8,6 +8,6 @@
     "jsx": "react"
   },
   "include": [
-    "./src/**/*"
+    "../src/**/*"
   ]
 }

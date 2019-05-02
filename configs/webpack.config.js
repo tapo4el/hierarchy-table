@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const data = require('./data.json');
+const data = require('../data.json');
 
 module.exports = (env, argv) => ({
     entry: ['babel-polyfill', './src/index.tsx'],
@@ -26,18 +26,24 @@ module.exports = (env, argv) => ({
                     'css-loader',
                 ],
             },
-            { test: /\.(ts|tsx)$/, loader: 'awesome-typescript-loader' },
+            {
+                test: /\.(ts|tsx)$/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    configFileName: './configs/tsconfig.json',
+                },
+            },
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
     resolve: { extensions: ['*', '.js', '.jsx', '.ts', '.tsx'] },
     output: {
-        path: path.resolve(__dirname, 'public/'),
+        path: path.resolve(__dirname, '../public/'),
         publicPath: '/',
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public/'),
+        contentBase: path.join(__dirname, '../public/'),
         port: 3000,
         publicPath: 'http://localhost:3000/',
         hotOnly: true,
