@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions';
 
-import { UserResponse } from '../types';
+import { UserResponse, RemoveRow } from '../types';
 
-const dataReceived = createAction<UserResponse[]>('DATA_RECEIVED');
+export const dataReceived = createAction<UserResponse[]>('DATA_RECEIVED');
 
-export default dataReceived;
+export const removeRecord = createAction<RemoveRow>('REMOVE_RECORD');

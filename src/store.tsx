@@ -5,7 +5,7 @@ import {
 } from 'redux';
 
 import reducers from './reducers';
-import dataReceived from './actions';
+import { dataReceived } from './actions';
 import { UserResponse, AppState } from './types';
 import { UserAPI } from './utils/api';
 

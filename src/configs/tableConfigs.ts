@@ -47,6 +47,10 @@ const tableConfigs: TableConfigs = {
                 title: 'Knows the Joker?',
                 key: 10,
             },
+            {
+                title: '',
+                key: 11,
+            },
         ],
         idField: 'Identification number',
         childTableName: 'relatives',
@@ -73,6 +77,10 @@ const tableConfigs: TableConfigs = {
                 title: 'Frequency of visits',
                 key: 4,
             },
+            {
+                title: '',
+                key: 5,
+            },
         ],
         idField: 'Relative ID',
         childTableName: 'phones',
@@ -90,6 +98,10 @@ const tableConfigs: TableConfigs = {
             {
                 title: 'Phone',
                 key: 3,
+            },
+            {
+                title: '',
+                key: 4,
             },
         ],
         idField: 'Phone ID',

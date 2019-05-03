@@ -15,6 +15,9 @@ exports[`Table "phones" should be rendered correctly 1`] = `
       <th>
         Phone
       </th>
+      <th>
+        
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +32,14 @@ exports[`Table "phones" should be rendered correctly 1`] = `
       </td>
       <td>
         +(179)-982-0570
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Remove
+        </button>
       </td>
     </tr>
   </tbody>
@@ -56,6 +67,9 @@ exports[`Table "relatives" should be rendered correctly 1`] = `
       <th>
         Frequency of visits
       </th>
+      <th>
+        
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -80,6 +94,14 @@ exports[`Table "relatives" should be rendered correctly 1`] = `
       </td>
       <td>
         29
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Remove
+        </button>
       </td>
     </tr>
   </tbody>
@@ -125,6 +147,9 @@ exports[`Table "users" should be rendered correctly if it doesn\`t have child ta
       <th>
         Knows the Joker?
       </th>
+      <th>
+        
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -163,6 +188,14 @@ exports[`Table "users" should be rendered correctly if it doesn\`t have child ta
       </td>
       <td>
         false
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Remove
+        </button>
       </td>
     </tr>
   </tbody>
@@ -208,6 +241,9 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
       <th>
         Knows the Joker?
       </th>
+      <th>
+        
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -250,6 +286,14 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
       </td>
       <td>
         false
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Remove
+        </button>
       </td>
     </tr>
   </tbody>

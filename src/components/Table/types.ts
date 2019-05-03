@@ -3,13 +3,15 @@ import { OutputParametricSelector } from 'reselect';
 import { AppState, Record } from '../../types';
 
 export interface OwnProps {
-    tableName: string;
+    tableName: 'users' | 'relatives' | 'phones';
     id?: string;
+    parentId?: string;
 }
 export interface TableProps {
-    tableName: string;
+    tableName: 'users' | 'relatives' | 'phones';
     data: Record[];
     childList: string[];
+    parentId?: string;
 }
 export interface TableState {
     showChildrenFor: string[];

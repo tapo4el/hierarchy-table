@@ -1,4 +1,4 @@
-import normalizeData from './tableData';
+import { normalizeData } from './tableData';
 
 import { response, finalAppState } from './testData';
 

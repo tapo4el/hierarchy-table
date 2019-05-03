@@ -1,5 +1,5 @@
 import tableData from './tableData';
-import dataReceived from '../actions';
+import { dataReceived } from '../actions';
 import { response, finalAppState, initialState } from '../utils/testData';
 
 describe('Reducers', () => {

@@ -39,3 +39,15 @@ export interface PhoneResponse {
 }
 
 export type childTable = 'relatives' | 'phones';
+
+export interface DataReceivedAction {
+    payload: UserResponse[];
+}
+export interface RemoveAction {
+    payload: RemoveRow;
+}
+export interface RemoveRow {
+    tableName: 'users' | 'relatives' | 'phones';
+    id: string;
+    parentId?: string;
+}

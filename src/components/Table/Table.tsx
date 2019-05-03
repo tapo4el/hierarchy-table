@@ -2,12 +2,13 @@ import * as React from 'react';
 
 import './styles.css';
 
-import { TableProps, TableState } from './types';
+import { TableState } from './types';
+import { MyProps } from './enhancer';
 import tableConfigs from '../../configs/tableConfigs';
 import { Record } from '../../types';
 import ChildTable from './index';
 
-class Table extends React.PureComponent<TableProps, TableState> {
+class Table extends React.PureComponent<MyProps, TableState> {
     state: TableState = {
         showChildrenFor: [],
     };
@@ -22,24 +23,28 @@ class Table extends React.PureComponent<TableProps, TableState> {
     }
 
     renderRow(elem: Record): React.ReactNode {
-        const { tableName, childList } = this.props;
+        const {
+            tableName,
+            childList,
+            removeRecord,
+            parentId,
+        } = this.props;
         const { showChildrenFor } = this.state;
         const { idField, childTableName, columns } = tableConfigs[tableName];
         const id = elem[idField];
         const hasChildTable = childList.includes(id);
         const isChildTableVisible = showChildrenFor.includes(id) && hasChildTable;
-        const row = childTableName
-            ? [
-                <td className="arrow" key="arrow">
-                    { hasChildTable && <div className={isChildTableVisible ? 'arrow-down' : 'arrow-right'} /> }
-                </td>,
-            ]
-            : [];
 
         return (
             <React.Fragment key={id}>
                 <tr onClick={() => this.onClickHandler(id)}>
-                    { row.concat(Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>)) }
+                    { childTableName && (
+                        <td className="arrow" key="arrow">
+                            { hasChildTable && <div className={isChildTableVisible ? 'arrow-down' : 'arrow-right'} /> }
+                        </td>
+                    )}
+                    { Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>) }
+                    <td><button type="button" onClick={() => removeRecord({ parentId, tableName, id })}>Remove</button></td>
                 </tr>
                 { isChildTableVisible && (
                     <tr>
