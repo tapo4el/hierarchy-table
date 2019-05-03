@@ -1,4 +1,4 @@
-import { UserResponse, TableData, AppState } from '../types';
+import {UserResponse, TableData, AppState, RemoveRow} from '../types';
 
 export const response: UserResponse[] = [{
     data: {
@@ -85,3 +85,9 @@ export const initialAppState: AppState = {
 };
 
 export const initialState: TableData = { users: [], relatives: {}, phones: {} };
+
+export const removeRowPayload: RemoveRow = {
+    tableName: 'users',
+    id: '34',
+};
+export const getCopy = (obj: any) => JSON.parse(JSON.stringify(obj));

@@ -53,7 +53,7 @@ describe('Table', () => {
         expect(component.toJSON()).toMatchSnapshot();
     });
 
-    it('should render the child table after clicking on the parent row', async () => {
+    it('should show the child table after clicking on the parent row', async () => {
         const store = mockStore(finalAppState);
         const wrapper = mount(
             <Provider store={store}><Table tableName="users" /></Provider>,
@@ -63,7 +63,7 @@ describe('Table', () => {
         expect(wrapper.find('.dataTable')).toHaveLength(2);
     });
 
-    it('should remove the child table after clicking on the parent row second time', async () => {
+    it('should hide the child table after clicking on the parent row second time', async () => {
         const store = mockStore(finalAppState);
         const wrapper = mount(
             <Provider store={store}><Table tableName="users" /></Provider>,
@@ -72,5 +72,27 @@ describe('Table', () => {
         expect(wrapper.find('.dataTable')).toHaveLength(2);
         await wrapper.find('td.arrow').at(0).simulate('click');
         expect(wrapper.find('.dataTable')).toHaveLength(1);
+    });
+
+    it('should remove the table after clicking on the remove button', async () => {
+        const store = mockStore(finalAppState);
+        const wrapper = mount(
+            <Provider store={store}><Table tableName="users" /></Provider>,
+        );
+        expect(wrapper.find('.dataTable')).toHaveLength(1);
+        await wrapper.find('.removeButton').at(0).simulate('click');
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('should remove the child table after clicking on the child remove button', async () => {
+        const store = mockStore(finalAppState);
+        const wrapper = mount(
+            <Provider store={store}><Table tableName="users" /></Provider>,
+        );
+        expect(wrapper.find('.dataTable')).toHaveLength(1);
+        await wrapper.find('td.arrow').at(0).simulate('click');
+        expect(wrapper.find('.dataTable')).toHaveLength(2);
+        await wrapper.find('.removeButton').at(1).simulate('click');
+        expect(store.getActions()).toMatchSnapshot();
     });
 });

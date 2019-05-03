@@ -301,3 +301,29 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
   </tbody>
 </table>
 `;
+
+exports[`Table should remove the child table after clicking on the child remove button 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "id": "1007",
+      "parentId": "34",
+      "tableName": "relatives",
+    },
+    "type": "REMOVE_RECORD",
+  },
+]
+`;
+
+exports[`Table should remove the table after clicking on the remove button 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "id": "34",
+      "parentId": undefined,
+      "tableName": "users",
+    },
+    "type": "REMOVE_RECORD",
+  },
+]
+`;
