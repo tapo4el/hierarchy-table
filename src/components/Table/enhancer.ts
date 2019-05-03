@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState, childTable, RemoveRow } from '../../types';
+import { AppState, ChildTable, RemoveRow } from '../../types';
 import {
     getUsers,
     getPhones,
@@ -18,7 +18,7 @@ const selectorsMap: {[key: string]: selectorType} = {
     phones: getPhones,
 };
 
-const childrenName = (tableName: string): childTable | undefined => tableConfigs[tableName].childTableName;
+const childrenName = (tableName: string): ChildTable | undefined => tableConfigs[tableName].childTableName;
 
 const mapStateToProps = (state: AppState, ownProps: OwnProps): TableProps => ({
     data: selectorsMap[ownProps.tableName](state, ownProps.id),

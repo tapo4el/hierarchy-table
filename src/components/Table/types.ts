@@ -1,14 +1,14 @@
 import { OutputParametricSelector } from 'reselect';
 
-import { AppState, Record } from '../../types';
+import { AppState, Record, Table } from '../../types';
 
 export interface OwnProps {
-    tableName: 'users' | 'relatives' | 'phones';
+    tableName: Table;
     id?: string;
     parentId?: string;
 }
 export interface TableProps {
-    tableName: 'users' | 'relatives' | 'phones';
+    tableName: Table;
     data: Record[];
     childList: string[];
     parentId?: string;

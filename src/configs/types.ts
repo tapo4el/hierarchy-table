@@ -1,4 +1,4 @@
-import { childTable } from '../types';
+import { ChildTable } from '../types';
 
 export interface TableConfigs {
     [key: string]: TableConfig;
@@ -6,7 +6,7 @@ export interface TableConfigs {
 export interface TableConfig {
     columns: CellConfig[];
     idField: string;
-    childTableName?: childTable;
+    childTableName?: ChildTable;
 }
 export interface CellConfig {
     title: string;

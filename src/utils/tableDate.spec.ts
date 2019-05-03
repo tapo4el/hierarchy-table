@@ -1,6 +1,8 @@
 import { normalizeData, removeRecords } from './tableData';
 
-import { response, finalAppState, removeRowPayload, initialState, getCopy, usersList } from './testData';
+import {
+    response, finalAppState, removeRowPayload, initialState, getCopy, usersList,
+} from './testData';
 import { RemoveRow } from '../types';
 
 describe('tableData utils', () => {

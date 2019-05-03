@@ -1,4 +1,9 @@
-import {UserResponse, TableData, AppState, RemoveRow} from '../types';
+import {
+    UserResponse,
+    TableData,
+    AppState,
+    RemoveRow,
+} from '../types';
 
 export const response: UserResponse[] = [{
     data: {
@@ -90,4 +95,6 @@ export const removeRowPayload: RemoveRow = {
     tableName: 'users',
     id: '34',
 };
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const getCopy = (obj: any) => JSON.parse(JSON.stringify(obj));

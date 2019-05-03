@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 
-import { AppState, Record, childTable } from '../types';
+import { AppState, Record, ChildTable } from '../types';
 
 const stateAndId = (state: AppState, id: string): [AppState, string] => [state, id];
-const stateAndChildTableName = (state: AppState, childName: childTable): [AppState, childTable] => [state, childName];
+const stateAndChildTableName = (state: AppState, childName: ChildTable): [AppState, ChildTable] => [state, childName];
 
 export const getUsers = createSelector(
     stateAndId,
