@@ -21,9 +21,7 @@ exports[`Table "phones" should be rendered correctly 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr
-      onClick={[Function]}
-    >
+    <tr>
       <td>
         2008
       </td>
@@ -35,6 +33,7 @@ exports[`Table "phones" should be rendered correctly 1`] = `
       </td>
       <td>
         <button
+          className="removeButton"
           onClick={[Function]}
           type="button"
         >
@@ -73,11 +72,11 @@ exports[`Table "relatives" should be rendered correctly 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr
-      onClick={[Function]}
-    >
+    <tr>
       <td
         className="arrow"
+        onClick={[Function]}
+        role="presentation"
       >
         <div
           className="arrow-right"
@@ -97,6 +96,7 @@ exports[`Table "relatives" should be rendered correctly 1`] = `
       </td>
       <td>
         <button
+          className="removeButton"
           onClick={[Function]}
           type="button"
         >
@@ -153,11 +153,11 @@ exports[`Table "users" should be rendered correctly if it doesn\`t have child ta
     </tr>
   </thead>
   <tbody>
-    <tr
-      onClick={[Function]}
-    >
+    <tr>
       <td
         className="arrow"
+        onClick={[Function]}
+        role="presentation"
       />
       <td>
         34
@@ -191,6 +191,7 @@ exports[`Table "users" should be rendered correctly if it doesn\`t have child ta
       </td>
       <td>
         <button
+          className="removeButton"
           onClick={[Function]}
           type="button"
         >
@@ -247,11 +248,11 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
     </tr>
   </thead>
   <tbody>
-    <tr
-      onClick={[Function]}
-    >
+    <tr>
       <td
         className="arrow"
+        onClick={[Function]}
+        role="presentation"
       >
         <div
           className="arrow-right"
@@ -289,6 +290,7 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
       </td>
       <td>
         <button
+          className="removeButton"
           onClick={[Function]}
           type="button"
         >

@@ -34,29 +34,33 @@ export function normalizeData(data: UserResponse[]): TableData {
     }, { users: [], relatives: {}, phones: {} });
 }
 
+function removeChildren(state: TableData, tableName: string, id: string): void {
+    const { childTableName } = tableConfigs[tableName];
+    if (state[childTableName] && state[childTableName][id]) {
+        const { idField } = tableConfigs[childTableName];
+        state[childTableName][id]
+            .map(el => el[idField])
+            .map(childId => removeChildren(state, childTableName, childId));
+        // eslint-disable-next-line no-param-reassign
+        delete state[childTableName][id];
+    }
+}
+
 export function removeRecords(state: TableData, payload: RemoveRow): TableData {
     const newState = { ...state };
     const { tableName, id, parentId } = payload;
-    let { childTableName, idField } = tableConfigs[tableName];
-    if (parentId) {
-        // @ts-ignore
-        newState[tableName][parentId] = newState[tableName][parentId].filter(el => el[idField] !== id);
-    } else {
-        // @ts-ignore
+    const { idField } = tableConfigs[tableName];
+    if (tableName === 'users') {
         newState[tableName] = newState[tableName].filter(el => el[idField] !== id);
+    } else {
+        const newList = newState[tableName][parentId].filter(el => el[idField] !== id);
+        if (newList.length > 0) {
+            newState[tableName][parentId] = newList;
+        } else {
+            delete newState[tableName][parentId];
+        }
     }
-    let readyToRemove = [id];
-    let childrenId: string[];
-    console.log(newState);
-
-    while (childTableName && childrenId) {
-        ({ idField } = tableConfigs[childTableName]);
-        childrenId = newState[childTableName][id] && newState[childTableName][id].map(el => el[idField]);
-        // eslint-disable-next-line no-loop-func
-        readyToRemove.forEach(i => delete newState[childTableName][i]);
-        ({ childTableName } = tableConfigs[childTableName]);
-        readyToRemove = childrenId;
-    }
+    removeChildren(newState, tableName, id);
 
     return newState;
 }

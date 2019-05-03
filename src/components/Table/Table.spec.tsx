@@ -59,7 +59,7 @@ describe('Table', () => {
             <Provider store={store}><Table tableName="users" /></Provider>,
         );
         expect(wrapper.find('.dataTable')).toHaveLength(1);
-        await wrapper.find('tr').at(1).simulate('click');
+        await wrapper.find('td.arrow').at(0).simulate('click');
         expect(wrapper.find('.dataTable')).toHaveLength(2);
     });
 
@@ -68,9 +68,9 @@ describe('Table', () => {
         const wrapper = mount(
             <Provider store={store}><Table tableName="users" /></Provider>,
         );
-        await wrapper.find('tr').at(1).simulate('click');
+        await wrapper.find('td.arrow').at(0).simulate('click');
         expect(wrapper.find('.dataTable')).toHaveLength(2);
-        await wrapper.find('tr').at(1).simulate('click');
+        await wrapper.find('td.arrow').at(0).simulate('click');
         expect(wrapper.find('.dataTable')).toHaveLength(1);
     });
 });

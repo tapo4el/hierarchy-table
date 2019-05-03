@@ -43,6 +43,7 @@ body {
 }
 .dataTable td.arrow {
     width: 15px;
+    cursor: pointer;
 }
 .arrow-down {
     width: 0;
@@ -59,4 +60,9 @@ body {
     border-bottom: 7px solid transparent;
 
     border-left: 7px solid #212121;
+}
+.removeButton {
+    font-size: 14px;
+    cursor:pointer;
+    border-radius: 5px;
 }

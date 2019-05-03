@@ -37,14 +37,16 @@ class Table extends React.PureComponent<MyProps, TableState> {
 
         return (
             <React.Fragment key={id}>
-                <tr onClick={() => this.onClickHandler(id)}>
+                <tr>
                     { childTableName && (
-                        <td className="arrow" key="arrow">
+                        <td className="arrow" key="arrow" role="presentation" onClick={() => this.onClickHandler(id)}>
                             { hasChildTable && <div className={isChildTableVisible ? 'arrow-down' : 'arrow-right'} /> }
                         </td>
                     )}
                     { Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>) }
-                    <td><button type="button" onClick={() => removeRecord({ parentId, tableName, id })}>Remove</button></td>
+                    <td key="remove">
+                        <button type="button" className="removeButton" onClick={() => removeRecord({ parentId, tableName, id })}>Remove</button>
+                    </td>
                 </tr>
                 { isChildTableVisible && (
                     <tr>
