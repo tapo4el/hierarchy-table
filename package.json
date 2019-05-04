@@ -10,7 +10,7 @@
     "build": "webpack --mode production --config ./configs/webpack.config.js",
     "lint": "eslint src/**/*.tsx src/**/*.ts",
     "test": "jest --config ./configs/jest.config.js",
-    "testWithCoverage": "jest --coverage --config ./configs/jest.config.js"
+    "test:coverage": "jest --coverage --config ./configs/jest.config.js"
   },
   "dependencies": {
     "@types/enzyme": "^3.9.1",
@@ -54,12 +54,14 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "mini-css-extract-plugin": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.30.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.0",

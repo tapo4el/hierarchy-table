@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const data = require('../data.json');
 
 module.exports = (env, argv) => ({
@@ -59,4 +61,14 @@ module.exports = (env, argv) => ({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
     ],
+    optimization: {
+        minimize: argv.mode === 'production',
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+            }),
+            new OptimizeCSSAssetsPlugin({}),
+        ],
+    },
 });

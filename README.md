@@ -15,5 +15,5 @@ yarn build
 To run test cases:
 ```
 yarn test
-yarn testWithCoverage
+yarn test:coverage
 ```
