@@ -79,7 +79,7 @@ exports[`Table "relatives" should be rendered correctly 1`] = `
         role="presentation"
       >
         <div
-          className="arrow-right"
+          className="arrowRight"
         />
       </td>
       <td>
@@ -255,7 +255,7 @@ exports[`Table "users" should be rendered correctly if it has child table 1`] = 
         role="presentation"
       >
         <div
-          className="arrow-right"
+          className="arrowRight"
         />
       </td>
       <td>

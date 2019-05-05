@@ -17,7 +17,7 @@ module.exports = (env, argv) => ({
                 options: { presets: ['@babel/env'] },
             },
             {
-                test: /\.css$/,
+                test: /\.(css|less)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -26,6 +26,7 @@ module.exports = (env, argv) => ({
                         },
                     },
                     'css-loader',
+                    'less-loader',
                 ],
             },
             {

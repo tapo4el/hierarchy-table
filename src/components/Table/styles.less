@@ -1,0 +1,79 @@
+// default section
+@default-border: 1px solid #dedede;
+@default-font-size: 14px;
+@default-padding: 10px;
+@default-color: #212121;
+// default section
+
+body {
+  margin: @default-padding;
+}
+.dataTable {
+  width: 100%;
+  border-top: @default-border;
+  border-left: @default-border;
+  color: @default-color;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: @default-font-size;
+  border-collapse: separate;
+
+  th {
+    background: rgb(220, 220, 220);
+    font-weight: bold;
+    padding: @default-padding 0;
+  }
+
+  td {
+    padding: @default-padding;
+    line-height: 17px;
+    border-bottom: @default-border;
+    border-right: @default-border;
+
+    &.tableWrapper {
+      padding: @default-padding*2 @default-padding;
+      background-color: #fff;
+
+      &>div {
+        border: @default-border;
+        padding: 8px 0 8px 10px;
+        font-weight: bold;
+      }
+    }
+
+    &.arrow {
+      width: 15px;
+      cursor: pointer;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(2n) {
+        background-color: rgba(0,0,50,.02);
+      }
+
+      &:hover {
+        background-color: #fcfff5;
+      }
+    }
+  }
+}
+.arrowDown {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid @default-color;
+}
+.arrowRight {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid @default-color;
+}
+.removeButton {
+  font-size: @default-font-size;
+  cursor:pointer;
+  border-radius: 5px;
+}

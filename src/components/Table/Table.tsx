@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './styles.css';
+import './styles.less';
 
 import { TableState } from './types';
 import { MyProps } from './enhancer';
@@ -39,19 +39,25 @@ class Table extends React.PureComponent<MyProps, TableState> {
             <React.Fragment key={id}>
                 <tr>
                     { childTableName && (
-                        <td className="arrow" key="arrow" role="presentation" onClick={() => this.onClickHandler(id)}>
-                            { hasChildTable && <div className={isChildTableVisible ? 'arrow-down' : 'arrow-right'} /> }
+                        <td className="arrow" onClick={() => this.onClickHandler(id)} key="arrow" role="presentation">
+                            { hasChildTable && <div className={isChildTableVisible ? 'arrowDown' : 'arrowRight'} /> }
                         </td>
                     )}
                     { Object.keys(elem).map(item => <td key={item}>{elem[item]}</td>) }
                     <td key="remove">
-                        <button type="button" className="removeButton" onClick={() => removeRecord({ parentId, tableName, id })}>Remove</button>
+                        <button
+                            type="button"
+                            className="removeButton"
+                            onClick={() => removeRecord({ parentId, tableName, id })}
+                        >
+                            Remove
+                        </button>
                     </td>
                 </tr>
                 { isChildTableVisible && (
                     <tr>
                         <td colSpan={columns.length} className="tableWrapper">
-                            <div className="tableTitle">{`has_${childTableName}`}</div>
+                            <div>{`has_${childTableName}`}</div>
                             <ChildTable tableName={childTableName} id={id} />
                         </td>
                     </tr>
