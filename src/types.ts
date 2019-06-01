@@ -31,11 +31,7 @@ export interface RelativeResponse {
 }
 export interface PhoneResponse {
     data: Record;
-    kids: {
-        has_phone?: {
-            records: object[];
-        };
-    };
+    kids: {};
 }
 
 export type ChildTable = 'relatives' | 'phones';
