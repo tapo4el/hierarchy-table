@@ -17,3 +17,10 @@ To run test cases:
 yarn test
 yarn test:coverage
 ```
+## Used technologies
+- React, Redux, redux-actions, reselect,
+- Typescript
+- Jest, Enzyme
+- Babel
+- Eslint
+- Webpack
